@@ -1,0 +1,27 @@
+meta {
+  name: hello bruno
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://echo.usebruno.com
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Bruno",
+    "message": "Hello from the most loving API testing tool by devs!"
+  }
+}
+
+script:post-response {
+  console.log(res.body)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
